@@ -137,6 +137,7 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\ClassMethod\NumericReturnTypeFromStrictScalarReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnNeverTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromMockObjectRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnDirectArrayRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictConstantReturnRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictScalarReturnsRector
@@ -148,5 +149,5 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
 
 
- ! [NOTE] Loaded 144 rules                                                                                           
+ ! [NOTE] Loaded 145 rules                                                                                           
 
