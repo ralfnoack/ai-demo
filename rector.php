@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-const TYPE_COVERAGE_LEVEL = 10;
+const TYPE_COVERAGE_LEVEL = 11;
 const DEAD_CODE_LEVEL = 0;
 const CODE_QUALITY_LEVEL = 0;
 
