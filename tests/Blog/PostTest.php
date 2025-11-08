@@ -17,7 +17,7 @@ use Symfony\Component\Uid\Uuid;
 
 final class PostTest extends TestCase
 {
-    public function testPostToString()
+    public function testPostToString(): void
     {
         $post = new Post(
             Uuid::v4(),
@@ -39,7 +39,7 @@ final class PostTest extends TestCase
         $this->assertSame($expected, $post->toString());
     }
 
-    public function testPostToArray()
+    public function testPostToArray(): void
     {
         $id = Uuid::v4();
         $post = new Post(

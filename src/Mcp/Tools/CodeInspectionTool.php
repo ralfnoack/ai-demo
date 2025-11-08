@@ -17,7 +17,7 @@ class CodeInspectionTool
     public function rectorAnalyze(string $path): array
     {
         $output = [];
-        $cmd = sprintf('vendor/bin/rector process %s --dry-run --output-format json', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/rector process %s --dry-run --output-format json', escapeshellarg($path));
         exec($cmd, $output);
         $json = implode("\n", $output);
         return json_decode($json, true) ?? ['error' => 'rector Analyse fehlgeschlagen'];
@@ -32,7 +32,7 @@ class CodeInspectionTool
     public function rectorOptimize(string $path): array
     {
         $output = [];
-        $cmd = sprintf('vendor/bin/rector process %s --output-format json', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/rector process %s --output-format json', escapeshellarg($path));
         exec($cmd, $output);
         $json = implode("\n", $output);
         return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
@@ -47,7 +47,7 @@ class CodeInspectionTool
     public function phpstanAnalyze(string $path): array
     {
         $output = [];
-        $cmd = sprintf('vendor/bin/phpstan analyse %s --no-progress --error-format=json', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/phpstan analyse %s --no-progress --error-format=json', escapeshellarg($path));
         exec($cmd, $output);
         $json = implode("\n", $output);
         return json_decode($json, true) ?? ['error' => 'phpstan Analyse fehlgeschlagen'];

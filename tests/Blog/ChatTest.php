@@ -26,7 +26,7 @@ use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 
 final class ChatTest extends TestCase
 {
-    public function testLoadMessagesReturnsDefaultSystemMessage()
+    public function testLoadMessagesReturnsDefaultSystemMessage(): void
     {
         $agent = new MockAgent();
         $chat = self::createChat($agent);
@@ -42,7 +42,7 @@ final class ChatTest extends TestCase
         $this->assertStringContainsString('similarity_search', $systemMessage->getContent());
     }
 
-    public function testSubmitMessageAddsUserMessageAndAgentResponse()
+    public function testSubmitMessageAddsUserMessageAndAgentResponse(): void
     {
         $agent = new MockAgent([
             'What is Symfony?' => 'Symfony is a PHP web framework for building web applications and APIs.',
@@ -75,7 +75,7 @@ final class ChatTest extends TestCase
         $this->assertSame('Symfony is a PHP web framework for building web applications and APIs.', $assistantMessage->getContent());
     }
 
-    public function testSubmitMessageWithUnknownQueryUsesDefaultResponse()
+    public function testSubmitMessageWithUnknownQueryUsesDefaultResponse(): void
     {
         $agent = new MockAgent([
             'What is the weather today?' => 'I can help you with Symfony-related questions!',
@@ -96,7 +96,7 @@ final class ChatTest extends TestCase
         $this->assertSame('I can help you with Symfony-related questions!', $assistantMessage->getContent());
     }
 
-    public function testMultipleMessagesAreTrackedCorrectly()
+    public function testMultipleMessagesAreTrackedCorrectly(): void
     {
         $agent = new MockAgent([
             'What is Symfony?' => 'Symfony is a PHP web framework for building web applications and APIs.',
@@ -126,7 +126,7 @@ final class ChatTest extends TestCase
         $this->assertCount(5, $messages->getMessages()); // system + user1 + assistant1 + user2 + assistant2
     }
 
-    public function testResetClearsMessages()
+    public function testResetClearsMessages(): void
     {
         $agent = new MockAgent([
             'What is Symfony?' => 'Symfony is a PHP web framework for building web applications and APIs.',
@@ -147,7 +147,7 @@ final class ChatTest extends TestCase
         $this->assertCount(1, $messages->getMessages()); // Only system message remains
     }
 
-    public function testAgentReceivesFullConversationHistory()
+    public function testAgentReceivesFullConversationHistory(): void
     {
         $agent = new MockAgent([
             'What is Symfony?' => 'Symfony is a PHP web framework for building web applications and APIs.',
@@ -185,7 +185,7 @@ final class ChatTest extends TestCase
         // The 5th message appears to be the previous assistant response or another system message
     }
 
-    public function testMockAgentAssertionsWork()
+    public function testMockAgentAssertionsWork(): void
     {
         $agent = new MockAgent([
             'What is Symfony?' => 'Symfony is a PHP web framework for building web applications and APIs.',

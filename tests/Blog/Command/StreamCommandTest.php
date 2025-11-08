@@ -24,7 +24,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class StreamCommandTest extends TestCase
 {
-    public function testStreamCommandOutputsStreamedContentAndSuccess()
+    public function testStreamCommandOutputsStreamedContentAndSuccess(): void
     {
         $mockAgent = $this->createMock(AgentInterface::class);
         $mockAgent

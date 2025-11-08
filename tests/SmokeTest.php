@@ -21,7 +21,7 @@ final class SmokeTest extends WebTestCase
 {
     use InteractsWithLiveComponents;
 
-    public function testIndex()
+    public function testIndex(): void
     {
         $client = static::createClient();
         $client->request('GET', '/');
@@ -32,7 +32,7 @@ final class SmokeTest extends WebTestCase
     }
 
     #[DataProvider('provideChats')]
-    public function testChats(string $path, string $expectedHeadline)
+    public function testChats(string $path, string $expectedHeadline): void
     {
         $client = static::createClient();
         $client->request('GET', $path);
