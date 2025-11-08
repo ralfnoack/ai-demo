@@ -16,14 +16,14 @@ class CodeInspectionToolTest extends TestCase
 
     public function testRectorAnalyze(): void
     {
-        $result = $this->tool->rectorAnalyze(__DIR__ . '/../src');
+        $result = $this->tool->rectorAnalyze(__DIR__ . '/../../../src');
         $this->assertIsArray($result);
         $this->assertArrayHasKey('totals', $result);
     }
 
     public function testPhpstanAnalyze(): void
     {
-        $result = $this->tool->phpstanAnalyze(__DIR__ . '/../src');
+        $result = $this->tool->phpstanAnalyze(__DIR__ . '/../../../src');
         $this->assertIsArray($result);
 
         $this->assertArrayHasKey('totals', $result);
@@ -31,7 +31,7 @@ class CodeInspectionToolTest extends TestCase
 
     public function testRectorOptimize(): void
     {
-        $result = $this->tool->rectorOptimize(__DIR__ . '/../src');
+        $result = $this->tool->rectorOptimize(__DIR__ . '/../../../src');
         $this->assertIsArray($result);
         $this->assertArrayHasKey('totals', $result);
     }
