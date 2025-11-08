@@ -18,7 +18,6 @@ class CodeInspectionToolTest extends TestCase
     {
         $result = $this->tool->rectorAnalyze(__DIR__ . '/../src');
         $this->assertIsArray($result);
-        dump($result);
         $this->assertArrayHasKey('totals', $result);
     }
 
@@ -34,7 +33,6 @@ class CodeInspectionToolTest extends TestCase
     {
         $result = $this->tool->rectorOptimize(__DIR__ . '/../src');
         $this->assertIsArray($result);
-        dump($result);
         $this->assertArrayHasKey('totals', $result);
     }
 }
