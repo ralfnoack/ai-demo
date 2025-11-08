@@ -144,6 +144,7 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnNewRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictConstantReturnRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedPropertyRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromSymfonySerializerRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictScalarReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictStringReturnsRector
@@ -154,5 +155,5 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
 
 
- ! [NOTE] Loaded 150 rules                                                                                           
+ ! [NOTE] Loaded 151 rules                                                                                           
 
