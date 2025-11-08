@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+const TYPE_COVERAGE_LEVEL = 5;
+const DEAD_CODE_LEVEL = 0;
+const CODE_QUALITY_LEVEL = 0;
+
 use Rector\Config\RectorConfig;
 
 return RectorConfig::configure()
@@ -14,6 +18,6 @@ return RectorConfig::configure()
     ])
     // uncomment to reach your current PHP version
     ->withPhpSets()
-    ->withTypeCoverageLevel(0)
-    ->withDeadCodeLevel(0)
-    ->withCodeQualityLevel(0);
+    ->withTypeCoverageLevel(TYPE_COVERAGE_LEVEL)
+    ->withDeadCodeLevel(DEAD_CODE_LEVEL)
+    ->withCodeQualityLevel(CODE_QUALITY_LEVEL);
