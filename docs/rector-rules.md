@@ -142,10 +142,11 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictScalarReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictStringReturnsRector
  * Rector\TypeDeclaration\Rector\Class_\AddTestsVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Class_\ReturnTypeFromStrictTernaryRector
  * Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromCreateMockAssignRector
  * Rector\TypeDeclaration\Rector\Closure\AddClosureVoidReturnTypeWhereNoReturnRector
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
 
 
- ! [NOTE] Loaded 143 rules                                                                                           
+ ! [NOTE] Loaded 144 rules                                                                                           
 
