@@ -21,13 +21,13 @@ use Symfony\UX\LiveComponent\DefaultActionTrait;
 use function Symfony\Component\String\u;
 
 #[AsLiveComponent('youtube')]
-final class TwigComponent
+final readonly class TwigComponent
 {
     use DefaultActionTrait;
 
     public function __construct(
-        private readonly Chat $youTube,
-        private readonly LoggerInterface $logger,
+        private Chat $youTube,
+        private LoggerInterface $logger,
     ) {
     }
 

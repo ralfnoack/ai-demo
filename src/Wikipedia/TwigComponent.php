@@ -18,12 +18,12 @@ use Symfony\UX\LiveComponent\Attribute\LiveArg;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent('wikipedia')]
-final class TwigComponent
+final readonly class TwigComponent
 {
     use DefaultActionTrait;
 
     public function __construct(
-        private readonly Chat $wikipedia,
+        private Chat $wikipedia,
     ) {
     }
 

@@ -18,14 +18,14 @@ use Symfony\AI\Platform\Result\TextResult;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-final class Chat
+final readonly class Chat
 {
-    private const SESSION_KEY = 'wikipedia-chat';
+    private const string SESSION_KEY = 'wikipedia-chat';
 
     public function __construct(
-        private readonly RequestStack $requestStack,
+        private RequestStack $requestStack,
         #[Autowire(service: 'ai.agent.wikipedia')]
-        private readonly AgentInterface $agent,
+        private AgentInterface $agent,
     ) {
     }
 

@@ -19,14 +19,14 @@ use Symfony\AI\Platform\Message\UserMessage;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-final class Chat
+final readonly class Chat
 {
-    private const SESSION_KEY = 'stream-chat';
+    private const string SESSION_KEY = 'stream-chat';
 
     public function __construct(
-        private readonly RequestStack $requestStack,
+        private RequestStack $requestStack,
         #[Autowire(service: 'ai.agent.stream')]
-        private readonly AgentInterface $agent,
+        private AgentInterface $agent,
     ) {
     }
 

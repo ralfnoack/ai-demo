@@ -100,7 +100,6 @@ Demo MCP server added with a `current-time` tool to return the current time, wit
 To add the server, add the following configuration to your MCP Client's settings, e.g. your IDE:
 ```json
 {
-{
   "servers": {
     "symfony": {
       "command": "php",
@@ -110,7 +109,6 @@ To add the server, add the following configuration to your MCP Client's settings
       ]
     }
   }
-}
 }
 ```
 

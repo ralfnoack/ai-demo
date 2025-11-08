@@ -34,6 +34,6 @@ class CurrentTimeTool
     {
         $this->logger->info('CurrentTimeTool called', ['format' => $format]);
 
-        return (new \DateTime('now', new \DateTimeZone('UTC')))->format($format);
+        return new \DateTime('now', new \DateTimeZone('UTC'))->format($format);
     }
 }

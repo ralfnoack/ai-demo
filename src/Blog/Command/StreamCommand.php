@@ -14,6 +14,7 @@ namespace App\Blog\Command;
 use Symfony\AI\Agent\AgentInterface;
 use Symfony\AI\Platform\Message\Message;
 use Symfony\AI\Platform\Message\MessageBag;
+use Symfony\AI\Platform\Result\ResultInterface;
 use Symfony\AI\Platform\Result\StreamResult;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -42,8 +43,7 @@ final readonly class StreamCommand
 
         $io->section('Agent Response:');
         $result = $this->blogAgent->call($messages, ['stream' => true]);
-
-        \assert($result instanceof StreamResult);
+        \assert($result instanceof ResultInterface);
 
         foreach ($result->getContent() as $word) {
             $io->write($word);

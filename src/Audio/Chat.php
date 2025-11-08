@@ -20,15 +20,15 @@ use Symfony\AI\Platform\Result\TextResult;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-final class Chat
+final readonly class Chat
 {
-    private const SESSION_KEY = 'audio-chat';
+    private const string SESSION_KEY = 'audio-chat';
 
     public function __construct(
-        private readonly PlatformInterface $platform,
-        private readonly RequestStack $requestStack,
+        private PlatformInterface $platform,
+        private RequestStack $requestStack,
         #[Autowire(service: 'ai.agent.audio')]
-        private readonly AgentInterface $agent,
+        private AgentInterface $agent,
     ) {
     }
 

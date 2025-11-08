@@ -22,8 +22,8 @@ class CurrentTimeResourceTemplate
     public function getTimeByTimezone(string $timezone): array
     {
         try {
-            $time = (new \DateTime('now', new \DateTimeZone($timezone)))->format('Y-m-d H:i:s T');
-        } catch (\Exception $e) {
+            $time = new \DateTime('now', new \DateTimeZone($timezone))->format('Y-m-d H:i:s T');
+        } catch (\Exception) {
             $time = 'Invalid timezone: '.$timezone;
         }
 

@@ -24,7 +24,7 @@ class CurrentTimeResource
         return [
             'uri' => 'time://current',
             'mimeType' => 'text/plain',
-            'text' => (new \DateTime('now'))->format('Y-m-d H:i:s T'),
+            'text' => new \DateTime('now')->format('Y-m-d H:i:s T'),
         ];
     }
 }

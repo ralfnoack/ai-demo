@@ -18,12 +18,12 @@ use Symfony\UX\LiveComponent\Attribute\LiveArg;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 
 #[AsLiveComponent('audio')]
-final class TwigComponent
+final readonly class TwigComponent
 {
     use DefaultActionTrait;
 
     public function __construct(
-        private readonly Chat $chat,
+        private Chat $chat,
     ) {
     }
 
