@@ -13,7 +13,7 @@ What you need to run this demo:
 * Internet Connection
 * Terminal & Browser
 * [Git](https://git-scm.com/) & [GitHub Account](https://github.com)
-* [Docker](https://www.docker.com/) with [Docker Compose Plugin](https://docs.docker.com/compose/)
+* [Podman](https://www.podman.com/) with [Podman Compose Plugin](https://docs.podman.com/compose/)
 * Your Favorite IDE or Editor
 * An [OpenAI API Key](https://platform.openai.com/docs/api-reference/create-and-export-an-api-key)
 
@@ -34,13 +34,14 @@ The setup is split into three parts, the Symfony application, the OpenAI configu
 
 ### 1. Symfony App
 
-Checkout the repository, start the docker environment and install dependencies:
+Checkout the repository, start the podman environment and install dependencies:
 
 ```shell
 git clone git@github.com:symfony/ai-demo.git
 cd ai-demo
 composer install
-docker compose up -d
+podman machine start
+podman compose up -d
 symfony serve -d
 ```
 
@@ -99,15 +100,17 @@ Demo MCP server added with a `current-time` tool to return the current time, wit
 To add the server, add the following configuration to your MCP Client's settings, e.g. your IDE:
 ```json
 {
-    "servers": {
-        "symfony": {
-            "command": "php",
-            "args": [
-                "/your/full/path/to/bin/console",
-                "mcp:server"
-            ]
-        }
+{
+  "servers": {
+    "symfony": {
+      "command": "php",
+      "args": [
+        "/Users/ralf/PhpstormProjects/ai-demo/bin/console",
+        "mcp:server"
+      ]
     }
+  }
+}
 }
 ```
 
