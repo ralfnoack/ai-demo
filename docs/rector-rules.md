@@ -129,6 +129,7 @@ Loaded Rector rules
  * Rector\Removing\Rector\FuncCall\RemoveFuncCallArgRector
  * Rector\Renaming\Rector\Cast\RenameCastRector
  * Rector\Renaming\Rector\FuncCall\RenameFunctionRector
+ * Rector\Symfony\CodeQuality\Rector\ClassMethod\ResponseReturnTypeControllerActionRector
  * Rector\Transform\Rector\StaticCall\StaticCallToFuncCallRector
  * Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\BoolReturnTypeFromBooleanConstReturnsRector
@@ -149,5 +150,5 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
 
 
- ! [NOTE] Loaded 145 rules                                                                                           
+ ! [NOTE] Loaded 146 rules                                                                                           
 
