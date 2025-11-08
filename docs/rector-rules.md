@@ -132,6 +132,7 @@ Loaded Rector rules
  * Rector\Symfony\CodeQuality\Rector\ClassMethod\ResponseReturnTypeControllerActionRector
  * Rector\Transform\Rector\StaticCall\StaticCallToFuncCallRector
  * Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector
  * Rector\TypeDeclaration\Rector\ClassMethod\BoolReturnTypeFromBooleanConstReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\BoolReturnTypeFromBooleanStrictReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\NumericReturnTypeFromStrictReturnsRector
@@ -143,6 +144,7 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnNewRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictConstantReturnRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromSymfonySerializerRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictScalarReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictStringReturnsRector
  * Rector\TypeDeclaration\Rector\Class_\AddTestsVoidReturnTypeWhereNoReturnRector
@@ -152,5 +154,5 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
 
 
- ! [NOTE] Loaded 148 rules                                                                                           
+ ! [NOTE] Loaded 150 rules                                                                                           
 
