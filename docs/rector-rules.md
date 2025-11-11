@@ -23,6 +23,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Foreach_\ForeachItemsAssignToEmptyArrayToAssignRector
  * Rector\CodeQuality\Rector\Foreach_\ForeachToInArrayRector
  * Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector
+ * Rector\CodeQuality\Rector\Foreach_\UnusedForeachValueToArrayKeysRector
  * Rector\CodeQuality\Rector\FuncCall\ArrayMergeOfNonArraysToSimpleArrayRector
  * Rector\CodeQuality\Rector\FuncCall\ChangeArrayPushToArrayAssignRector
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
@@ -203,4 +204,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 199 rules
+ ! [NOTE] Loaded 200 rules
