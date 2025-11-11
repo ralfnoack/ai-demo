@@ -144,7 +144,7 @@ final readonly class CodeInspectionTool
     public function pestTest(string $path): array
     {
         $output = [];
-        $cmd = sprintf('php vendor/bin/pest --reporter=json', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/pest', escapeshellarg($path));
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
