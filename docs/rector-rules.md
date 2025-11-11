@@ -35,6 +35,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\If_\CombineIfRector
  * Rector\CodeQuality\Rector\If_\ConsecutiveNullCompareReturnsToNullCoalesceQueueRector
  * Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector
+ * Rector\CodeQuality\Rector\If_\ShortenElseIfRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfElseToTernaryRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector
@@ -194,4 +195,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 190 rules
+ ! [NOTE] Loaded 191 rules
