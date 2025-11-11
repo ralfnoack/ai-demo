@@ -48,6 +48,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\If_\ShortenElseIfRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfElseToTernaryRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector
+ * Rector\CodeQuality\Rector\If_\SimplifyIfNullableReturnRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector
  * Rector\CodeQuality\Rector\Include_\AbsolutizeRequireAndIncludePathRector
  * Rector\CodeQuality\Rector\Isset_\IssetOnPropertyObjectToPropertyExistsRector
@@ -213,4 +214,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 209 rules
+ ! [NOTE] Loaded 210 rules
