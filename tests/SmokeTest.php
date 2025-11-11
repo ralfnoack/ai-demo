@@ -4,7 +4,7 @@ uses(Tests\TestCase::class);
 
 uses(Symfony\UX\LiveComponent\Test\InteractsWithLiveComponents::class);
 
-test('index', function () {
+test('index', function (): void {
     $client = static::createClient();
     $client->request('GET', '/');
 

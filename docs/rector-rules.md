@@ -19,6 +19,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Foreach_\ForeachToInArrayRector
  * Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
+ * Rector\CodeQuality\Rector\FuncCall\IsAWithStringWithThirdArgumentRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyFuncGetArgsCountRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyInArrayValuesRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyRegexPatternRector
@@ -190,4 +191,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 186 rules
+ ! [NOTE] Loaded 187 rules

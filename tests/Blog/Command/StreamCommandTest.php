@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-test('stream command outputs streamed content and success', function () {
+test('stream command outputs streamed content and success', function (): void {
     $mockAgent = $this->createMock(AgentInterface::class);
     $mockAgent
         ->method('call')

@@ -3,7 +3,7 @@
 use App\Blog\Post;
 use Symfony\Component\Uid\Uuid;
 
-test('post to string', function () {
+test('post to string', function (): void {
     $post = new Post(
         Uuid::v4(),
         'Hello, World!',
@@ -24,7 +24,7 @@ test('post to string', function () {
     expect($post->toString())->toBe($expected);
 });
 
-test('post to array', function () {
+test('post to array', function (): void {
     $id = Uuid::v4();
     $post = new Post(
         $id,

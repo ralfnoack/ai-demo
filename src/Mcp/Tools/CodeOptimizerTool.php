@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Mcp\Tools;
 
-final class CodeOptimizerTool
+final readonly class CodeOptimizerTool
 {
-    public function __construct(private readonly ?string $pwd = null)
+    public function __construct(private ?string $pwd = null)
     {
         if (null !== $this->pwd) {
             chdir($this->pwd);

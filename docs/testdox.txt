@@ -1,0 +1,10 @@
+/Users/ralf/PhpstormProjects/ai-demo/tests/Blog/Command/StreamCommandTest.php
+ [x] stream command outputs streamed content and success
+
+/Users/ralf/PhpstormProjects/ai-demo/tests/Blog/PostTest.php
+ [x] post to string
+ [x] post to array
+
+/Users/ralf/PhpstormProjects/ai-demo/tests/SmokeTest.php
+ [x] index
+
