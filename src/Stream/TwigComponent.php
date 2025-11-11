@@ -30,6 +30,7 @@ final class TwigComponent extends AbstractController
 
     #[LiveProp(writable: true)]
     public ?string $message = null;
+
     public bool $stream = false;
 
     public function __construct(

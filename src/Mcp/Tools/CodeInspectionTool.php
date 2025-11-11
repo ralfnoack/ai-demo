@@ -26,7 +26,7 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = sprintf('php vendor/bin/rector process %s --dry-run --output-format json', escapeshellarg($path));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
         //        echo " result: $returnVar\n";
         //        echo ' output: '.implode("\n", $output)."\n";
@@ -49,9 +49,9 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = 'php vendor/bin/rector process --output-format json';
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         $json = implode("\n", $output);
         $decoded_json = json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
         echo " changed_files: ".$decoded_json['totals']['changed_files']."\n";
@@ -65,7 +65,7 @@ final readonly class CodeInspectionTool
 
         $cmd = 'php vendor/bin/rector list-rules';
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
         //        echo " result: $returnVar\n";
         //        echo ' output: '.implode("\n", $output)."\n";
@@ -74,7 +74,7 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = 'php vendor/bin/rector list-rules --output-format json';
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
         //        echo " result: $returnVar\n";
         //        echo ' output: '.implode("\n", $output)."\n";
@@ -97,9 +97,9 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = sprintf('php vendor/bin/phpstan analyse %s --no-progress --error-format=json', escapeshellarg($path));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
@@ -120,9 +120,9 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = sprintf('php vendor/bin/phpunit %s', escapeshellarg($path));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
@@ -148,9 +148,9 @@ final readonly class CodeInspectionTool
             escapeshellarg($this->pwd.$path),
         );
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         return 0 === $returnVar;

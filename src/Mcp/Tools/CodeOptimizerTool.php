@@ -29,6 +29,7 @@ final readonly class CodeOptimizerTool
     }
 
     public const string CONSTANT_NAME = 'CODE_QUALITY_LEVEL';
+
     public const string FILEPATH = __DIR__.'/../../../rector_levels.php';
 
     public function run(): bool
@@ -46,10 +47,12 @@ final readonly class CodeOptimizerTool
                 $this->incrementedOneRectorLevel($codeQualityLevel, $deadCodeLevel, $typeCoverageLevel, $codingStyleLevel);
                 continue;
             }
+
             $codeInspectionTool->rectorList();
             if (!$this->testRunSuccessful()) {
                 return false;
             }
+
             $commitChangesTool = new CommitChangesTool();
             if ($commitChangesTool->isCommitable($this->pwd)) {
                 $commitChangesTool->commitChanges(
@@ -81,8 +84,9 @@ final readonly class CodeOptimizerTool
         if ($current >= $rectorLevelEnum->getMaxLevel()) {
             return false;
         }
+
         $increment = min($maxIncr, $rectorLevelEnum->getMaxLevel() - $current);
-        echo 'Incrementing '.$rectorLevelEnum->getConstantName()." = $current by $increment\n";
+        echo 'Incrementing '.$rectorLevelEnum->getConstantName().sprintf(' = %d by %d%s', $current, $increment, PHP_EOL);
         $this->incrementRectorLevel($rectorLevelEnum, $increment);
 
         return true;
@@ -101,7 +105,7 @@ final readonly class CodeOptimizerTool
     {
         $content = file_get_contents($filePath);
         if (false === $content) {
-            throw new \RuntimeException("Could not read file: $filePath");
+            throw new \RuntimeException('Could not read file: ' . $filePath);
         }
 
         $pattern = sprintf('/(const\s+%s\s*=\s*)(\d+)(\s*;)/', preg_quote($constantName, '/'));
@@ -121,11 +125,12 @@ final readonly class CodeOptimizerTool
     {
         $fs = new Filesystem();
         if (!$fs->exists($filePath)) {
-            throw new FileNotFoundException("File does not exist: $filePath");
+            throw new FileNotFoundException('File does not exist: ' . $filePath);
         }
+
         $content = file_get_contents($filePath);
         if (false === $content) {
-            throw new IOException("File is not readable: $filePath");
+            throw new IOException('File is not readable: ' . $filePath);
         }
 
         $pattern = sprintf('/(const\s+%s\s*=\s*)(\d+)(\s*;)/', preg_quote($constantName, '/'));
@@ -133,14 +138,14 @@ final readonly class CodeOptimizerTool
             return (int) $matches[2];
         }
 
-        throw new \RuntimeException("Constant $constantName not found in file: $filePath");
+        throw new \RuntimeException(sprintf('Constant %s not found in file: %s', $constantName, $filePath));
     }
 
     private function writeConstantToPhpFile(string $filePath, string $constantName, int $value = 0): void
     {
         $content = file_get_contents($filePath);
         if (false === $content) {
-            throw new \RuntimeException("Could not read file: $filePath");
+            throw new \RuntimeException('Could not read file: ' . $filePath);
         }
 
         $pattern = sprintf('/(const\s+%s\s*=\s*)(\d+)(\s*;)/', preg_quote($constantName, '/'));
@@ -158,7 +163,7 @@ final readonly class CodeOptimizerTool
         } catch (FileNotFoundException) {
             file_put_contents(self::FILEPATH, self::RECTOR_LEVEL_FILE_DEFAULT);
         } catch (IOException) {
-            throw new \RuntimeException("Could not read constant $constantName from file: ".self::FILEPATH);
+            throw new \RuntimeException(sprintf('Could not read constant %s from file: ', $constantName).self::FILEPATH);
         } catch (\RuntimeException) {
             $this->writeConstantToPhpFile(self::FILEPATH, $constantName, 0);
         }

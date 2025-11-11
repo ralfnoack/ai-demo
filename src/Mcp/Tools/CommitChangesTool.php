@@ -64,16 +64,16 @@ final class CommitChangesTool
         $returnVar = 0;
         $cmd = sprintf('git add %s', escapeshellarg($path));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         $cmd = sprintf('git commit -m %s', escapeshellarg($message));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         if (0 !== $returnVar) {
@@ -89,9 +89,9 @@ final class CommitChangesTool
         $returnVar = 0;
         $cmd = sprintf('svn commit  %s -m %s', escapeshellarg($path), escapeshellarg($message));
 
-        echo "$cmd\n";
+        echo $cmd . PHP_EOL;
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
+        echo sprintf(' result: %d%s', $returnVar, PHP_EOL);
         echo ' output: '.implode("\n", $output)."\n";
 
         if (0 !== $returnVar) {

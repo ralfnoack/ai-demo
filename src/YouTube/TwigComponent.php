@@ -40,8 +40,8 @@ final readonly class TwigComponent
 
         try {
             $this->youTube->start($videoId);
-        } catch (\Exception $e) {
-            $this->logger->error('Unable to start YouTube chat.', ['exception' => $e]);
+        } catch (\Exception $exception) {
+            $this->logger->error('Unable to start YouTube chat.', ['exception' => $exception]);
             $this->youTube->reset();
         }
     }

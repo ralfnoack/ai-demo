@@ -80,10 +80,18 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Ternary\TernaryEmptyArrayArrayDimFetchToCoalesceRector
  * Rector\CodeQuality\Rector\Ternary\TernaryImplodeToImplodeRector
  * Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector
+ * Rector\CodingStyle\Rector\Assign\SplitDoubleAssignRector
+ * Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector
+ * Rector\CodingStyle\Rector\ClassConst\RemoveFinalFromConstRector
+ * Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector
  * Rector\CodingStyle\Rector\FuncCall\ClosureFromCallableToFirstClassCallableRector
  * Rector\CodingStyle\Rector\FuncCall\ConsistentImplodeRector
  * Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector
  * Rector\CodingStyle\Rector\FunctionLike\FunctionLikeToFirstClassCallableRector
+ * Rector\CodingStyle\Rector\If_\NullableCompareToNullRector
+ * Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector
+ * Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector
+ * Rector\CodingStyle\Rector\Ternary\TernaryConditionVariableAssignmentRector
  * Rector\CodingStyle\Rector\Use_\SeparateMultiUseImportsRector
  * Rector\DeadCode\Rector\Array_\RemoveDuplicatedArrayKeyRector
  * Rector\DeadCode\Rector\Assign\RemoveDoubleAssignRector
@@ -321,4 +329,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictSetUpRector
 
 
- ! [NOTE] Loaded 317 rules
+ ! [NOTE] Loaded 325 rules

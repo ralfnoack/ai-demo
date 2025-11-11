@@ -28,7 +28,7 @@ class CurrentTimeResourceTemplate
         }
 
         return [
-            'uri' => "time://$timezone",
+            'uri' => 'time://' . $timezone,
             'mimeType' => 'text/plain',
             'text' => $time,
         ];
