@@ -46,9 +46,7 @@ final class CodeOptimizerTool
     private function testRunSuccessful(): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
-        $pest = $codeInspectionTool->pestTest();
-
-        return empty($pest['failures']);
+        return $codeInspectionTool->pestTest();
     }
 
     private function incrementConstanstInPhpFile(string $filePath, string $constantName, int $incrementBy = 1): void

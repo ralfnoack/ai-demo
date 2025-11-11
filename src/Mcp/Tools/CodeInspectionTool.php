@@ -141,7 +141,7 @@ final readonly class CodeInspectionTool
      * @return array Analyse-Report
      */
     #[McpTool(name: 'pest_test')]
-    public function pestTest(string $path = '/tests'): array
+    public function pestTest(string $path = '/tests'): bool
     {
         $output = [];
         $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-html %s --coverage-html %s --path-coverage %s',
@@ -159,6 +159,6 @@ final readonly class CodeInspectionTool
 
         $json = implode("\n", $output);
 
-        return json_decode($json, true) ?? ['error' => 'pest Test fehlgeschlagen'];
+        return $returnVar === 0;
     }
 }
