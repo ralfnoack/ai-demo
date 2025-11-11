@@ -6,10 +6,10 @@ namespace App\Mcp\Tools;
 
 final readonly class CodeInspectionTool
 {
-    public function __construct(private ?string $pwd = null)
+    public function __construct(private ?string $pwd = '.')
     {
-        if (null !== $pwd) {
-            chdir($pwd);
+        if (null !== $this->pwd) {
+            chdir($this->pwd);
         }
     }
 
