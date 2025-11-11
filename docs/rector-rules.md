@@ -42,6 +42,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector
  * Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector
  * Rector\CodeQuality\Rector\LogicalAnd\AndAssignsToSeparateLinesRector
+ * Rector\CodeQuality\Rector\Ternary\ArrayKeyExistsTernaryThenValueToCoalescingRector
  * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
  * Rector\CodeQuality\Rector\Ternary\TernaryImplodeToImplodeRector
  * Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector
@@ -197,4 +198,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 193 rules
+ ! [NOTE] Loaded 194 rules
