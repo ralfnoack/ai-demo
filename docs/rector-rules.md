@@ -29,6 +29,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Identical\SimplifyArraySearchRector
  * Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector
  * Rector\CodeQuality\Rector\Identical\SimplifyConditionsRector
+ * Rector\CodeQuality\Rector\Identical\StrlenZeroToIdenticalEmptyStringRector
  * Rector\CodeQuality\Rector\If_\CombineIfRector
  * Rector\CodeQuality\Rector\If_\ConsecutiveNullCompareReturnsToNullCoalesceQueueRector
  * Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector
@@ -191,4 +192,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 187 rules
+ ! [NOTE] Loaded 188 rules
