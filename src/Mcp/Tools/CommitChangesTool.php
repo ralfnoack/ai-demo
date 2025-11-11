@@ -13,7 +13,7 @@ final class CommitChangesTool
         $output = [];
         exec('which svn', $output);
 
-        return !empty($output);
+        return $output !== [];
     }
 
     public function isCommitable(string $path): bool
@@ -36,7 +36,7 @@ final class CommitChangesTool
         $output = [];
         exec('which git', $output);
 
-        return !empty($output);
+        return $output !== [];
     }
 
     public function isPathVersionControlledByGit(string $path): bool
@@ -44,7 +44,7 @@ final class CommitChangesTool
         $output = [];
         exec(sprintf('cd %s && git rev-parse --is-inside-work-tree', escapeshellarg($path)), $output);
 
-        return !empty($output) && 'true' === trim($output[0]);
+        return $output !== [] && 'true' === trim($output[0]);
     }
 
     public function isPathVersionControlledBySvn(string $path): bool
@@ -52,7 +52,7 @@ final class CommitChangesTool
         $output = [];
         exec(sprintf('cd %s && svn info', escapeshellarg($path)), $output);
 
-        return !empty($output);
+        return $output !== [];
     }
 
     /**

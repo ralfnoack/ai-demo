@@ -20,6 +20,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
  * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
+ * Rector\CodeQuality\Rector\Empty_\SimplifyEmptyCheckOnEmptyArrayRector
  * Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector
  * Rector\CodeQuality\Rector\Expression\InlineIfToExplicitIfRector
  * Rector\CodeQuality\Rector\Expression\TernaryFalseExpressionToIfRector
@@ -221,4 +222,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 217 rules
+ ! [NOTE] Loaded 218 rules
