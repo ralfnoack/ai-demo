@@ -39,6 +39,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\FuncCall\SingleInArrayToCompareRector
  * Rector\CodeQuality\Rector\FuncCall\UnwrapSprintfOneArgumentRector
  * Rector\CodeQuality\Rector\Identical\BooleanNotIdenticalToNotIdenticalRector
+ * Rector\CodeQuality\Rector\Identical\FlipTypeControlToUseExclusiveTypeRector
  * Rector\CodeQuality\Rector\Identical\SimplifyArraySearchRector
  * Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector
  * Rector\CodeQuality\Rector\Identical\SimplifyConditionsRector
@@ -215,4 +216,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 211 rules
+ ! [NOTE] Loaded 212 rules
