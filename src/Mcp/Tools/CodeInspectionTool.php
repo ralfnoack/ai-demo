@@ -68,8 +68,8 @@ final readonly class CodeInspectionTool
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
-        echo ' output: '.implode("\n", $output)."\n";
+//        echo " result: $returnVar\n";
+//        echo ' output: '.implode("\n", $output)."\n";
         file_put_contents($this->pwd . '/docs/rector_rules.md', implode("\n", $output));
 
         $output = [];
@@ -77,8 +77,8 @@ final readonly class CodeInspectionTool
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
-        echo ' output: '.implode("\n", $output)."\n";
+//        echo " result: $returnVar\n";
+//        echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
 
