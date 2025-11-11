@@ -47,7 +47,7 @@ final readonly class CodeInspectionTool
     public function rectorOptimize(string $path): array
     {
         $output = [];
-        $cmd = sprintf('php vendor/bin/rector process %s --output-format json', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/rector process --output-format json', escapeshellarg($path));
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
@@ -144,9 +144,9 @@ final readonly class CodeInspectionTool
     public function pestTest(string $path = '/tests'): bool
     {
         $output = [];
-        $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-html %s --coverage-html %s --path-coverage %s',
+        $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-text %s --coverage-html %s --path-coverage %s',
             escapeshellarg($this->pwd . '/vendor/bin/pest'),
-            escapeshellarg($this->pwd . '/docs/testdox.html'),
+            escapeshellarg($this->pwd . '/docs/testdox.txt'),
             escapeshellarg($this->pwd . '/docs/coverage'),
             escapeshellarg($this->pwd . $path)
         );

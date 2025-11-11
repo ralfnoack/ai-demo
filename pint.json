@@ -1,0 +1,26 @@
+{
+    "preset": "symfony",
+    "rules": {
+        "no_unused_imports": true,
+        "ordered_imports": {
+            "sort_algorithm": "alpha"
+        }
+    },
+    "sets": [
+        "psr12",
+        "symfony"
+    ],
+    "skip": {
+        "symfony/dir": [
+            "ordered_imports"
+        ]
+    },
+    "autoload_paths": [
+        "src/",
+        "tests/"
+    ],
+    "paths": [
+        "src/",
+        "tests/"
+    ]
+}

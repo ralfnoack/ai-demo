@@ -4,14 +4,12 @@ Automatisierter Zyklus zur Steigerung der Typabdeckung mit Rector:
 
 Wiederhole die folgenden Schritte, solange alle Tests fehlerfrei laufen:
 
-1. TYPE_COVERAGE_LEVEL in @rector.php um +1 erhöhen
-2. rector_analyze auf @/src ausführen
-3. rector_optimize auf @/src ausführen
-4. Aktive Rector-Regeln dokumentieren:
+1. TYPE_COVERAGE_LEVEL in @rector.php um +1 erhöhen und die aktiven Rector-Regeln dokumentieren:
    run php vendor/bin/rector list-rules > /docs/rector-rules.md
-5. Tests ausführen:
+2. rector_optimize auf @/src ausführen und die Anzahl der geänderten Dateien notieren
+3. Tests ausführen:
    run php vendor/bin/phpunit
-6. Änderungen committen, wenn die Tests fehlerfrei sind und Änderungen in /src vorliegen:
+4. Wenn Anzahl der geänderten Dateien > 0 ist UND die Tests fehlerfrei ausgeführt wurden, dann:
    git add .
    git commit -m "Steigerung der Typabdeckung auf LEVEL X"
 

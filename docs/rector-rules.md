@@ -5,8 +5,39 @@ Loaded Rector rules
  * Rector\Arguments\Rector\ClassMethod\ArgumentAdderRector
  * Rector\Arguments\Rector\FuncCall\FunctionArgumentDefaultValueReplacerRector
  * Rector\CodeQuality\Rector\Assign\CombinedAssignRector
+ * Rector\CodeQuality\Rector\BooleanAnd\RepeatedAndNotEqualToNotInArrayRector
+ * Rector\CodeQuality\Rector\BooleanAnd\SimplifyEmptyArrayCheckRector
+ * Rector\CodeQuality\Rector\BooleanNot\ReplaceConstantBooleanNotRector
+ * Rector\CodeQuality\Rector\BooleanNot\ReplaceMultipleBooleanNotRector
+ * Rector\CodeQuality\Rector\BooleanNot\SimplifyDeMorganBinaryRector
+ * Rector\CodeQuality\Rector\BooleanOr\RepeatedOrEqualToInArrayRector
  * Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector
+ * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
+ * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
+ * Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector
+ * Rector\CodeQuality\Rector\Foreach_\ForeachToInArrayRector
+ * Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector
+ * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
+ * Rector\CodeQuality\Rector\FuncCall\SimplifyFuncGetArgsCountRector
+ * Rector\CodeQuality\Rector\FuncCall\SimplifyInArrayValuesRector
+ * Rector\CodeQuality\Rector\FuncCall\SimplifyRegexPatternRector
+ * Rector\CodeQuality\Rector\FuncCall\SimplifyStrposLowerRector
+ * Rector\CodeQuality\Rector\FuncCall\SingleInArrayToCompareRector
+ * Rector\CodeQuality\Rector\Identical\BooleanNotIdenticalToNotIdenticalRector
+ * Rector\CodeQuality\Rector\Identical\SimplifyArraySearchRector
+ * Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector
+ * Rector\CodeQuality\Rector\Identical\SimplifyConditionsRector
+ * Rector\CodeQuality\Rector\If_\CombineIfRector
+ * Rector\CodeQuality\Rector\If_\ConsecutiveNullCompareReturnsToNullCoalesceQueueRector
+ * Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector
+ * Rector\CodeQuality\Rector\If_\SimplifyIfElseToTernaryRector
+ * Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector
+ * Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector
+ * Rector\CodeQuality\Rector\LogicalAnd\AndAssignsToSeparateLinesRector
+ * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
+ * Rector\CodeQuality\Rector\Ternary\TernaryImplodeToImplodeRector
+ * Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector
  * Rector\CodingStyle\Rector\FuncCall\ClosureFromCallableToFirstClassCallableRector
  * Rector\CodingStyle\Rector\FuncCall\ConsistentImplodeRector
  * Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector
@@ -153,8 +184,10 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Class_\ReturnTypeFromStrictTernaryRector
  * Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromCreateMockAssignRector
  * Rector\TypeDeclaration\Rector\Closure\AddClosureVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Empty_\EmptyOnNullableObjectToInstanceOfRector
+ * Rector\TypeDeclaration\Rector\FunctionLike\AddParamTypeSplFixedArrayRector
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 152 rules                                                                                           
-
+ ! [NOTE] Loaded 186 rules

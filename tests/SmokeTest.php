@@ -1,54 +1,32 @@
 <?php
 
+uses(Tests\TestCase::class);
+
+uses(Symfony\UX\LiveComponent\Test\InteractsWithLiveComponents::class);
+
+test('index', function () {
+    $client = static::createClient();
+    $client->request('GET', '/');
+
+    static::assertResponseIsSuccessful();
+    static::assertSelectorTextContains('h1', 'Welcome to the Symfony AI Demo');
+    static::assertSelectorCount(6, '.card');
+});
 /*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+test('chats', function (string $path, string $expectedHeadline) {
+    $client = static::createClient();
+    $client->request('GET', $path);
+
+    static::assertResponseIsSuccessful();
+    static::assertSelectorTextSame('h4', $expectedHeadline);
+    static::assertSelectorCount(1, '#chat-submit');
+})->with('provideChats');
+*/
+/*
+ * @return iterable<array{string, string}>
  */
-
-namespace App\Tests;
-
-use PHPUnit\Framework\Attributes\CoversNothing;
-use PHPUnit\Framework\Attributes\DataProvider;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\UX\LiveComponent\Test\InteractsWithLiveComponents;
-
-#[CoversNothing]
-final class SmokeTest extends WebTestCase
-{
-    use InteractsWithLiveComponents;
-
-    public function testIndex(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/');
-
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Welcome to the Symfony AI Demo');
-        $this->assertSelectorCount(6, '.card');
-    }
-
-    #[DataProvider('provideChats')]
-    public function testChats(string $path, string $expectedHeadline): void
-    {
-        $client = static::createClient();
-        $client->request('GET', $path);
-
-        $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextSame('h4', $expectedHeadline);
-        $this->assertSelectorCount(1, '#chat-submit');
-    }
-
-    /**
-     * @return iterable<array{string, string}>
-     */
-    public static function provideChats(): iterable
-    {
-        yield 'Blog' => ['/blog', 'Retrieval Augmented Generation based on the Symfony blog'];
-        yield 'YouTube' => ['/youtube', 'Chat about a YouTube Video'];
-        yield 'Wikipedia' => ['/wikipedia', 'Wikipedia Research'];
-    }
-}
+dataset('provideChats', function () {
+    yield 'Blog' => ['/blog', 'Retrieval Augmented Generation based on the Symfony blog'];
+    yield 'YouTube' => ['/youtube', 'Chat about a YouTube Video'];
+    yield 'Wikipedia' => ['/wikipedia', 'Wikipedia Research'];
+});

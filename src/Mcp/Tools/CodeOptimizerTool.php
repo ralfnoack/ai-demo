@@ -34,9 +34,9 @@ final class CodeOptimizerTool
                 return false;
             }
             $commitChangesTool = new CommitChangesTool();
-            if ($commitChangesTool->isCommitable($path)) {
+            if ($commitChangesTool->isCommitable($this->pwd)) {
                 $commit = $commitChangesTool->commitChanges(
-                    $path,
+                    $this->pwd,
                     'Rector Auto Optimize applied changes '.$codeQualityLevel,
                 );
             }
