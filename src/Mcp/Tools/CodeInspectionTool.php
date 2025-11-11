@@ -70,7 +70,7 @@ final readonly class CodeInspectionTool
         exec($cmd, $output, $returnVar);
 //        echo " result: $returnVar\n";
 //        echo ' output: '.implode("\n", $output)."\n";
-        file_put_contents($this->pwd . '/docs/rector_rules.md', implode("\n", $output));
+        file_put_contents($this->pwd . '/docs/rector-rules.md', implode("\n", $output));
 
         $output = [];
         $cmd = sprintf('php vendor/bin/rector list-rules --output-format json');
