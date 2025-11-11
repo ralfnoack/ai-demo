@@ -45,6 +45,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\FuncCall\SimplifyRegexPatternRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyStrposLowerRector
  * Rector\CodeQuality\Rector\FuncCall\SingleInArrayToCompareRector
+ * Rector\CodeQuality\Rector\FuncCall\SortNamedParamRector
  * Rector\CodeQuality\Rector\FuncCall\UnwrapSprintfOneArgumentRector
  * Rector\CodeQuality\Rector\Identical\BooleanNotIdenticalToNotIdenticalRector
  * Rector\CodeQuality\Rector\Identical\FlipTypeControlToUseExclusiveTypeRector
@@ -230,4 +231,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 226 rules
+ ! [NOTE] Loaded 227 rules
