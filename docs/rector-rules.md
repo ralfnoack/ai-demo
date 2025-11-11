@@ -55,6 +55,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\LogicalAnd\LogicalToBooleanRector
  * Rector\CodeQuality\Rector\New_\NewStaticToNewSelfRector
  * Rector\CodeQuality\Rector\NotEqual\CommonNotEqualRector
+ * Rector\CodeQuality\Rector\Switch_\SingularSwitchToIfRector
  * Rector\CodeQuality\Rector\Ternary\ArrayKeyExistsTernaryThenValueToCoalescingRector
  * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
  * Rector\CodeQuality\Rector\Ternary\SwitchNegatedTernaryRector
@@ -212,4 +213,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 208 rules
+ ! [NOTE] Loaded 209 rules
