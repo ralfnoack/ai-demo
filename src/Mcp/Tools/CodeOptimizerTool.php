@@ -44,6 +44,11 @@ final readonly class CodeOptimizerTool
             $typeCoverageLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::TYPE_COVERAGE_LEVEL);
 
             $numberOfOptimizedFiles = $codeInspectionTool->numberOfRectorOptimizedFiles();
+
+            if (!$this->testRunSuccessful()) {
+                return false;
+            }
+
             if (!$this->testRunSuccessful()) {
                 return false;
             }
