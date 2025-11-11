@@ -18,6 +18,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
  * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
  * Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector
+ * Rector\CodeQuality\Rector\Expression\InlineIfToExplicitIfRector
  * Rector\CodeQuality\Rector\For_\ForRepeatedCountToOwnVariableRector
  * Rector\CodeQuality\Rector\Foreach_\ForeachItemsAssignToEmptyArrayToAssignRector
  * Rector\CodeQuality\Rector\Foreach_\ForeachToInArrayRector
@@ -202,4 +203,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 198 rules
+ ! [NOTE] Loaded 199 rules
