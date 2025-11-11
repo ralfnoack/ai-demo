@@ -34,13 +34,14 @@ final readonly class CodeOptimizerTool
     public function run(): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
-        while ($this->testRunSuccessful()) {
-            $codeQualityLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::CODE_QUALITY_LEVEL);
-            $deadCodeLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::DEAD_CODE_LEVEL);
-            $typeCoverageLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::TYPE_COVERAGE_LEVEL);
 
+        while ($needToOptimize = $this->levelAreNotMaximal(
+                $codeQualityLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::CODE_QUALITY_LEVEL),
+                $deadCodeLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::DEAD_CODE_LEVEL),
+                $typeCoverageLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::TYPE_COVERAGE_LEVEL),
+            ) && $this->testRunSuccessful()) {
             $numberOfOptimizedFiles = $codeInspectionTool->numberOfRectorOptimizedFiles();
-            if ($numberOfOptimizedFiles === 0) {
+            if (0 === $numberOfOptimizedFiles) {
                 $incremented = $this->incrementedOneRectorLevel($codeQualityLevel, $deadCodeLevel, $typeCoverageLevel);
                 continue;
             }
@@ -61,12 +62,18 @@ final readonly class CodeOptimizerTool
                 break;
             }
         }
+
+        if ($needToOptimize === false) {
+            echo "All Rector levels are at their maximum values.\n";
+        }
+
         return true;
     }
 
     private function testRunSuccessful(): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
+
         return $codeInspectionTool->pestTest();
     }
 
@@ -76,7 +83,7 @@ final readonly class CodeOptimizerTool
             return false;
         }
         $increment = min($maxIncr, $rectorLevelEnum->getMaxLevel() - $current);
-        echo "Incrementing " . $rectorLevelEnum->getConstantName() . " = $current by $increment\n";
+        echo 'Incrementing '.$rectorLevelEnum->getConstantName()." = $current by $increment\n";
         $this->incrementRectorLevel($rectorLevelEnum, $increment);
 
         return true;
@@ -176,5 +183,12 @@ final readonly class CodeOptimizerTool
             RectorLevelEnum::TYPE_COVERAGE_LEVEL,
             $typeCoverageLevel,
         );
+    }
+
+    private function levelAreNotMaximal(int $codeQualityLevel, int $deadCodeLevel, int $typeCoverageLevel): bool
+    {
+        return $codeQualityLevel < RectorLevelEnum::CODE_QUALITY_LEVEL->getMaxLevel()
+            || $deadCodeLevel < RectorLevelEnum::DEAD_CODE_LEVEL->getMaxLevel()
+            || $typeCoverageLevel < RectorLevelEnum::TYPE_COVERAGE_LEVEL->getMaxLevel();
     }
 }
