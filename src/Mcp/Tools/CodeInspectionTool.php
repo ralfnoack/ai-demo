@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Mcp\Tools;
 
-final class CodeInspectionTool
+final readonly class CodeInspectionTool
 {
-    public function __construct($pwd = null)
+    public function __construct(private ?string $pwd = null)
     {
         if (null !== $pwd) {
             chdir($pwd);
@@ -63,6 +63,15 @@ final class CodeInspectionTool
     public function rectorList(): array
     {
         $output = [];
+
+        $cmd = sprintf('php vendor/bin/rector list-rules');
+
+        echo "$cmd\n";
+        exec($cmd, $output, $returnVar);
+        echo " result: $returnVar\n";
+        echo ' output: '.implode("\n", $output)."\n";
+        file_put_contents($this->pwd . '/docs/rector_rules.md', implode("\n", $output));
+
         $cmd = sprintf('php vendor/bin/rector list-rules --output-format json');
 
         echo "$cmd\n";
@@ -71,6 +80,8 @@ final class CodeInspectionTool
         echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
+
+
 
         return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
     }
