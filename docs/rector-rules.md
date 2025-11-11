@@ -21,6 +21,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
  * Rector\CodeQuality\Rector\Class_\ConvertStaticToSelfRector
  * Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector
+ * Rector\CodeQuality\Rector\Class_\RemoveReadonlyPropertyVisibilityOnReadonlyClassRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
  * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
  * Rector\CodeQuality\Rector\Empty_\SimplifyEmptyCheckOnEmptyArrayRector
@@ -231,4 +232,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 227 rules
+ ! [NOTE] Loaded 228 rules
