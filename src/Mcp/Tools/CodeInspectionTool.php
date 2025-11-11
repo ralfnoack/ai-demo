@@ -28,8 +28,8 @@ final readonly class CodeInspectionTool
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-//        echo " result: $returnVar\n";
-//        echo ' output: '.implode("\n", $output)."\n";
+        //        echo " result: $returnVar\n";
+        //        echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
 
@@ -44,10 +44,10 @@ final readonly class CodeInspectionTool
      * @return array Optimierungs-Report
      */
     #[McpTool(name: 'rector_optimize')]
-    public function rectorOptimize(string $path): array
+    public function rectorOptimize(): int
     {
         $output = [];
-        $cmd = sprintf('php vendor/bin/rector process --output-format json', escapeshellarg($path));
+        $cmd = 'php vendor/bin/rector process --output-format jso″n';
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
@@ -56,7 +56,11 @@ final readonly class CodeInspectionTool
 
         $json = implode("\n", $output);
 
-        return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
+        $decoded_json = json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
+
+        return (int)$decoded_json['totals']['changed_files'];
+
+
     }
 
     #[McpTool(name: 'rector_listrules')]
@@ -68,21 +72,19 @@ final readonly class CodeInspectionTool
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-//        echo " result: $returnVar\n";
-//        echo ' output: '.implode("\n", $output)."\n";
-        file_put_contents($this->pwd . '/docs/rector-rules.md', implode("\n", $output));
+        //        echo " result: $returnVar\n";
+        //        echo ' output: '.implode("\n", $output)."\n";
+        file_put_contents($this->pwd.'/docs/rector-rules.md', implode("\n", $output));
 
         $output = [];
         $cmd = 'php vendor/bin/rector list-rules --output-format json';
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-//        echo " result: $returnVar\n";
-//        echo ' output: '.implode("\n", $output)."\n";
+        //        echo " result: $returnVar\n";
+        //        echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
-
-
 
         return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
     }
@@ -145,20 +147,17 @@ final readonly class CodeInspectionTool
     {
         $output = [];
         $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-text %s --coverage-html %s --path-coverage %s',
-            escapeshellarg($this->pwd . '/vendor/bin/pest'),
-            escapeshellarg($this->pwd . '/docs/testdox.txt'),
-            escapeshellarg($this->pwd . '/docs/coverage'),
-            escapeshellarg($this->pwd . $path)
+            escapeshellarg($this->pwd.'/vendor/bin/pest'),
+            escapeshellarg($this->pwd.'/docs/testdox.txt'),
+            escapeshellarg($this->pwd.'/docs/coverage'),
+            escapeshellarg($this->pwd.$path),
         );
-
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
         echo " result: $returnVar\n";
         echo ' output: '.implode("\n", $output)."\n";
 
-        $json = implode("\n", $output);
-
-        return $returnVar === 0;
+        return 0 === $returnVar;
     }
 }

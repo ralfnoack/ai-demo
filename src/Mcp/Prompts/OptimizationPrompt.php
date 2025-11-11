@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Mcp\Prompts;
@@ -9,8 +10,8 @@ class OptimizationPrompt
 {
     /**
      * Generiert einen Optimierungsvorschlag basierend auf einem Analyse-Report.
+     *
      * @param array $report Analyse-Report
-     * @return array
      */
     #[McpPrompt(name: 'optimize_code')]
     public function optimizeCode(array $report): array
@@ -18,12 +19,12 @@ class OptimizationPrompt
         return [
             [
                 'role' => 'assistant',
-                'content' => 'Hier sind Optimierungsvorschläge basierend auf dem Analyse-Report:'
+                'content' => 'Hier sind Optimierungsvorschläge basierend auf dem Analyse-Report:',
             ],
             [
                 'role' => 'user',
-                'content' => json_encode($report, JSON_PRETTY_PRINT)
-            ]
+                'content' => json_encode($report, JSON_PRETTY_PRINT),
+            ],
         ];
     }
 }

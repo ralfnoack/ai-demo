@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Mcp\Resources;
@@ -9,8 +10,8 @@ class InspectionReportResource
 {
     /**
      * Stellt einen statischen Analyse-Report bereit.
+     *
      * @param array $report Analyse-Report
-     * @return array
      */
     #[McpResource(uri: 'report://inspection', name: 'inspection_report', mimeType: 'application/json')]
     public function getReport(array $report): array
@@ -18,4 +19,3 @@ class InspectionReportResource
         return $report;
     }
 }
-
