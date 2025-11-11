@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require dirname(__DIR__).'/rector_levels.php';
+require __DIR__.'/rector_levels.php';
 
 use Rector\Config\RectorConfig;
 
