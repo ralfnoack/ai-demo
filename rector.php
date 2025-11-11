@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 const TYPE_COVERAGE_LEVEL = 26;
 const DEAD_CODE_LEVEL = 0;
-const CODE_QUALITY_LEVEL = 119;
+const CODE_QUALITY_LEVEL = 120;
 
 use Rector\Config\RectorConfig;
 
