@@ -17,6 +17,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\ClassMethod\InlineArrayReturnAssignRector
  * Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector
  * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
+ * Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
  * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
  * Rector\CodeQuality\Rector\Equal\UseIdenticalOverEqualWithSameTypeRector
@@ -219,4 +220,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 215 rules
+ ! [NOTE] Loaded 216 rules
