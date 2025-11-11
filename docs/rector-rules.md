@@ -68,6 +68,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Switch_\SingularSwitchToIfRector
  * Rector\CodeQuality\Rector\Switch_\SwitchTrueToIfRector
  * Rector\CodeQuality\Rector\Ternary\ArrayKeyExistsTernaryThenValueToCoalescingRector
+ * Rector\CodeQuality\Rector\Ternary\NumberCompareToMaxFuncCallRector
  * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
  * Rector\CodeQuality\Rector\Ternary\SwitchNegatedTernaryRector
  * Rector\CodeQuality\Rector\Ternary\TernaryEmptyArrayArrayDimFetchToCoalesceRector
@@ -226,4 +227,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 222 rules
+ ! [NOTE] Loaded 223 rules
