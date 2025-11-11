@@ -6,10 +6,10 @@ namespace App\Mcp\Tools;
 
 final class CodeOptimizerTool
 {
-    public function __construct($pwd = null)
+    public function __construct(private readonly ?string $pwd = null)
     {
-        if (null !== $pwd) {
-            chdir($pwd);
+        if (null !== $this->pwd) {
+            chdir($this->pwd);
         }
     }
 
