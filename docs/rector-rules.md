@@ -194,6 +194,7 @@ Loaded Rector rules
  * Rector\Removing\Rector\FuncCall\RemoveFuncCallArgRector
  * Rector\Renaming\Rector\Cast\RenameCastRector
  * Rector\Renaming\Rector\FuncCall\RenameFunctionRector
+ * Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector
  * Rector\Symfony\CodeQuality\Rector\ClassMethod\ResponseReturnTypeControllerActionRector
  * Rector\Transform\Rector\StaticCall\StaticCallToFuncCallRector
  * Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector
@@ -224,4 +225,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 220 rules
+ ! [NOTE] Loaded 221 rules
