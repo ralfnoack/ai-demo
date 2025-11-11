@@ -11,7 +11,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 final readonly class CodeOptimizerTool
 {
-    const string RECTOR_LEVEL_FILE_DEFAULT = <<<'PHP'
+    public const string RECTOR_LEVEL_FILE_DEFAULT = <<<'PHP'
                      <?php
 
                      declare(strict_types=1);
@@ -29,7 +29,7 @@ final readonly class CodeOptimizerTool
     }
 
     public const string CONSTANT_NAME = 'CODE_QUALITY_LEVEL';
-    public const string FILEPATH = __DIR__.'/../../../rector_levels.php';
+    public const string FILEPATH = __DIR__ . '/../../../rector_levels.php';
 
     public function run(): bool
     {
@@ -52,7 +52,7 @@ final readonly class CodeOptimizerTool
             if ($commitChangesTool->isCommitable($this->pwd)) {
                 $commit = $commitChangesTool->commitChanges(
                     $this->pwd,
-                    'Rector Auto Optimize applied changes '.$codeQualityLevel,
+                    'Rector Auto Optimize applied changes ' . $codeQualityLevel,
                 );
             }
 
@@ -70,13 +70,13 @@ final readonly class CodeOptimizerTool
         return $codeInspectionTool->pestTest();
     }
 
-    private function incrRectorLevelIfPossible(RectorLevelEnum $rectorLevelEnum, int $current, int $maxIncr = 1): bool
+    private function incrRectorLevelIfPossible(RectorLevelEnum $rectorLevelEnum, int $current, int $maxIncr = 10): bool
     {
         if ($current >= $rectorLevelEnum->getMaxLevel()) {
             return false;
         }
         $increment = min($maxIncr, $rectorLevelEnum->getMaxLevel() - $current);
-        echo "Incrementing ".$rectorLevelEnum->getConstantName()." = $current by $increment\n";
+        echo "Incrementing " . $rectorLevelEnum->getConstantName() . " = $current by $increment\n";
         $this->incrementRectorLevel($rectorLevelEnum, $increment);
 
         return true;
@@ -99,20 +99,15 @@ final readonly class CodeOptimizerTool
         }
 
         $pattern = sprintf('/(const\s+%s\s*=\s*)(\d+)(\s*;)/', preg_quote($constantName, '/'));
-        $newContent = preg_replace_callback(
+        $newContent = Preg::replaceCallback(
             $pattern,
-            function ($matches) use ($incrementBy): string {
+            function (array $matches) use ($incrementBy): string {
                 $newValue = (int) $matches[2] + $incrementBy;
 
-                return $matches[1].$newValue.$matches[3];
+                return $matches[1] . $newValue . $matches[3];
             },
             $content,
         );
-
-        if (null === $newContent) {
-            throw new \RuntimeException("Regex error while processing file: $filePath");
-        }
-
         file_put_contents($filePath, $newContent);
     }
 
@@ -157,7 +152,7 @@ final readonly class CodeOptimizerTool
         } catch (FileNotFoundException) {
             file_put_contents(self::FILEPATH, self::RECTOR_LEVEL_FILE_DEFAULT);
         } catch (IOException) {
-            throw new \RuntimeException("Could not read constant $constantName from file: ".self::FILEPATH);
+            throw new \RuntimeException("Could not read constant $constantName from file: " . self::FILEPATH);
         } catch (\RuntimeException) {
             $this->writeConstantToPhpFile(self::FILEPATH, $constantName, 0);
         }
@@ -169,17 +164,17 @@ final readonly class CodeOptimizerTool
     {
         $incremented = false;
         $incremented = $incremented || $this->incrRectorLevelIfPossible(
-                RectorLevelEnum::CODE_QUALITY_LEVEL,
-                $codeQualityLevel,
-            );
+            RectorLevelEnum::CODE_QUALITY_LEVEL,
+            $codeQualityLevel,
+        );
         $incremented = $incremented || $this->incrRectorLevelIfPossible(
-                RectorLevelEnum::DEAD_CODE_LEVEL,
-                $deadCodeLevel,
-            );
+            RectorLevelEnum::DEAD_CODE_LEVEL,
+            $deadCodeLevel,
+        );
 
         return $incremented || $this->incrRectorLevelIfPossible(
-                RectorLevelEnum::TYPE_COVERAGE_LEVEL,
-                $typeCoverageLevel,
-            );
+            RectorLevelEnum::TYPE_COVERAGE_LEVEL,
+            $typeCoverageLevel,
+        );
     }
 }
