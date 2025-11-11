@@ -26,6 +26,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector
  * Rector\CodeQuality\Rector\Foreach_\UnusedForeachValueToArrayKeysRector
  * Rector\CodeQuality\Rector\FuncCall\ArrayMergeOfNonArraysToSimpleArrayRector
+ * Rector\CodeQuality\Rector\FuncCall\CallUserFuncWithArrowFunctionToInlineRector
  * Rector\CodeQuality\Rector\FuncCall\ChangeArrayPushToArrayAssignRector
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
  * Rector\CodeQuality\Rector\FuncCall\IsAWithStringWithThirdArgumentRector
@@ -214,4 +215,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 210 rules
+ ! [NOTE] Loaded 211 rules
