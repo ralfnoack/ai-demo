@@ -42,7 +42,7 @@ final readonly class CodeOptimizerTool
             ) && $this->testRunSuccessful()) {
             $numberOfOptimizedFiles = $codeInspectionTool->numberOfRectorOptimizedFiles();
             if (0 === $numberOfOptimizedFiles) {
-                $incremented = $this->incrementedOneRectorLevel($codeQualityLevel, $deadCodeLevel, $typeCoverageLevel);
+                $this->incrementedOneRectorLevel($codeQualityLevel, $deadCodeLevel, $typeCoverageLevel);
                 continue;
             }
             $codeInspectionTool->rectorList();
@@ -51,7 +51,7 @@ final readonly class CodeOptimizerTool
             }
             $commitChangesTool = new CommitChangesTool();
             if ($commitChangesTool->isCommitable($this->pwd)) {
-                $commit = $commitChangesTool->commitChanges(
+                $commitChangesTool->commitChanges(
                     $this->pwd,
                     'Rector Auto Optimize applied changes ' . $codeQualityLevel,
                 );
@@ -72,9 +72,7 @@ final readonly class CodeOptimizerTool
 
     private function testRunSuccessful(): bool
     {
-        $codeInspectionTool = new CodeInspectionTool();
-
-        return $codeInspectionTool->pestTest();
+        return (new CodeInspectionTool())->pestTest();
     }
 
     private function incrRectorLevelIfPossible(RectorLevelEnum $rectorLevelEnum, int $current, int $maxIncr = 10): bool
