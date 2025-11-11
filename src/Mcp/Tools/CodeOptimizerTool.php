@@ -13,32 +13,35 @@ final class CodeOptimizerTool
         }
     }
 
-    const string CONSTANT_NAME = 'CODE_QUALITY_LEVEL';
-    const string FILEPATH = __DIR__.'/../../../rector.php';
+    public const string CONSTANT_NAME = 'CODE_QUALITY_LEVEL';
+    public const string FILEPATH = __DIR__.'/../../../rector.php';
 
     public function run(string $path): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
 
         $codeQualityLevel = 0;
-        try {
-            $codeQualityLevel = $this->readConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME);
-        } catch (\RuntimeException) {
-            $this->writeConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME, $codeQualityLevel);
+
+        while ($this->testRunSuccessful()) {
+            try {
+                $codeQualityLevel = $this->readConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME);
+            } catch (\RuntimeException) {
+                $this->writeConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME, $codeQualityLevel);
+            }
+            $optimize = $codeInspectionTool->rectorList();
+            $optimize = $codeInspectionTool->rectorOptimize($path);
+            if (!$this->testRunSuccessful()) {
+                return false;
+            }
+            $commitChangesTool = new CommitChangesTool();
+            if ($commitChangesTool->isCommitable($path)) {
+                $commit = $commitChangesTool->commitChanges(
+                    $path,
+                    'Rector Auto Optimize applied changes '.$codeQualityLevel,
+                );
+            }
+            $this->incrementConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME);
         }
-        $optimize = $codeInspectionTool->rectorList();
-        $optimize = $codeInspectionTool->rectorOptimize($path);
-        if (!$this->testRunSuccessful()) {
-            return false;
-        }
-        $commitChangesTool = new CommitChangesTool();
-        if ($commitChangesTool->isCommitable($path)) {
-            $commit = $commitChangesTool->commitChanges(
-                $path,
-                'Rector Auto Optimize applied changes '.$codeQualityLevel,
-            );
-        }
-        $this->incrementConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME);
 
         return true;
     }
@@ -46,6 +49,7 @@ final class CodeOptimizerTool
     private function testRunSuccessful(): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
+
         return $codeInspectionTool->pestTest();
     }
 
@@ -60,7 +64,7 @@ final class CodeOptimizerTool
         $newContent = preg_replace_callback(
             $pattern,
             function ($matches) use ($incrementBy) {
-                $newValue = (int)$matches[2] + $incrementBy;
+                $newValue = (int) $matches[2] + $incrementBy;
 
                 return $matches[1].$newValue.$matches[3];
             },
@@ -83,7 +87,7 @@ final class CodeOptimizerTool
 
         $pattern = sprintf('/(const\s+%s\s*=\s*)(\d+)(\s*;)/', preg_quote($constantName, '/'));
         if (preg_match($pattern, $content, $matches)) {
-            return (int)$matches[2];
+            return (int) $matches[2];
         }
 
         throw new \RuntimeException("Constant $constantName not found in file: $filePath");
