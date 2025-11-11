@@ -29,6 +29,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
  * Rector\CodeQuality\Rector\FuncCall\IsAWithStringWithThirdArgumentRector
  * Rector\CodeQuality\Rector\FuncCall\RemoveSoleValueSprintfRector
+ * Rector\CodeQuality\Rector\FuncCall\SetTypeToCastRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyFuncGetArgsCountRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyInArrayValuesRector
  * Rector\CodeQuality\Rector\FuncCall\SimplifyRegexPatternRector
@@ -205,4 +206,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 201 rules
+ ! [NOTE] Loaded 202 rules
