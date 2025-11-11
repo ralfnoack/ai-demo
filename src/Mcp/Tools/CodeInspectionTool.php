@@ -146,7 +146,7 @@ final readonly class CodeInspectionTool
         $output = [];
         $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-html %s --coverage-html %s --path-coverage %s',
             escapeshellarg($this->pwd . '/vendor/bin/pest'),
-            escapeshellarg($this->pwd . '/docs/testdox'),
+            escapeshellarg($this->pwd . '/docs/testdox.html'),
             escapeshellarg($this->pwd . '/docs/coverage'),
             escapeshellarg($this->pwd . $path)
         );
