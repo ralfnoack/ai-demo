@@ -26,6 +26,7 @@ final class CodeOptimizerTool
         } catch (\RuntimeException) {
             $this->writeConstanstInPhpFile(self::FILEPATH, self::CONSTANT_NAME, $codeQualityLevel);
         }
+        $optimize = $codeInspectionTool->rectorList();
         $optimize = $codeInspectionTool->rectorOptimize($path);
         if (!$this->testRunSuccessful($path)) {
             return false;

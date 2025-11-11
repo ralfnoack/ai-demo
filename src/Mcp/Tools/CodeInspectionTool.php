@@ -59,6 +59,22 @@ final class CodeInspectionTool
         return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
     }
 
+    #[McpTool(name: 'rector_listrules')]
+    public function rectorList(): array
+    {
+        $output = [];
+        $cmd = sprintf('php vendor/bin/rector list-rules --output-format json');
+
+        echo "$cmd\n";
+        exec($cmd, $output, $returnVar);
+        echo " result: $returnVar\n";
+        echo ' output: '.implode("\n", $output)."\n";
+
+        $json = implode("\n", $output);
+
+        return json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
+    }
+
     /**
      * Führt eine phpstan Analyse aus und gibt das Ergebnis als Array zurück.
      *
