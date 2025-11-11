@@ -15,6 +15,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\ClassConstFetch\VariableConstFetchToClassConstFetchRector
  * Rector\CodeQuality\Rector\ClassMethod\ExplicitReturnNullRector
  * Rector\CodeQuality\Rector\ClassMethod\InlineArrayReturnAssignRector
+ * Rector\CodeQuality\Rector\ClassMethod\LocallyCalledStaticMethodToNonStaticRector
  * Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector
  * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
  * Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector
@@ -225,4 +226,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 221 rules
+ ! [NOTE] Loaded 222 rules
