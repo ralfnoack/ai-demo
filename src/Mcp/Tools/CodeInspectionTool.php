@@ -144,7 +144,8 @@ final readonly class CodeInspectionTool
     public function pestTest(string $path = '/tests'): array
     {
         $output = [];
-        $cmd = sprintf('php -dxdebug.mode=coverage vendor/bin/pest --testdox-text %s --coverage-text %s -path-coverage %s',
+        $cmd = sprintf('php -dxdebug.mode=coverage %s --testdox-text %s --coverage-text %s --path-coverage %s',
+            escapeshellarg($this->pwd . '/vendor/bin/pest'),
             escapeshellarg($this->pwd . '/docs/testdox.txt'),
             escapeshellarg($this->pwd . '/docs/coverage.txt'),
             escapeshellarg($this->pwd . $path)
