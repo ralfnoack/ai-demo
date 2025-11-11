@@ -28,8 +28,8 @@ final readonly class CodeInspectionTool
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
-        echo " result: $returnVar\n";
-        echo ' output: '.implode("\n", $output)."\n";
+//        echo " result: $returnVar\n";
+//        echo ' output: '.implode("\n", $output)."\n";
 
         $json = implode("\n", $output);
 
