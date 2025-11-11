@@ -72,6 +72,7 @@ final readonly class CodeInspectionTool
         echo ' output: '.implode("\n", $output)."\n";
         file_put_contents($this->pwd . '/docs/rector_rules.md', implode("\n", $output));
 
+        $output = [];
         $cmd = sprintf('php vendor/bin/rector list-rules --output-format json');
 
         echo "$cmd\n";
