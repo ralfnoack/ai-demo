@@ -12,6 +12,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\BooleanNot\SimplifyDeMorganBinaryRector
  * Rector\CodeQuality\Rector\BooleanOr\RepeatedOrEqualToInArrayRector
  * Rector\CodeQuality\Rector\Catch_\ThrowWithPreviousExceptionRector
+ * Rector\CodeQuality\Rector\ClassMethod\ExplicitReturnNullRector
  * Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector
  * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
@@ -195,4 +196,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 191 rules
+ ! [NOTE] Loaded 192 rules
