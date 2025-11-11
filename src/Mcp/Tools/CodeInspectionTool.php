@@ -64,7 +64,7 @@ final readonly class CodeInspectionTool
     {
         $output = [];
 
-        $cmd = sprintf('php vendor/bin/rector list-rules');
+        $cmd = 'php vendor/bin/rector list-rules';
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
@@ -73,7 +73,7 @@ final readonly class CodeInspectionTool
         file_put_contents($this->pwd . '/docs/rector-rules.md', implode("\n", $output));
 
         $output = [];
-        $cmd = sprintf('php vendor/bin/rector list-rules --output-format json');
+        $cmd = 'php vendor/bin/rector list-rules --output-format json';
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
