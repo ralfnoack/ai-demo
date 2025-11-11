@@ -51,6 +51,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Isset_\IssetOnPropertyObjectToPropertyExistsRector
  * Rector\CodeQuality\Rector\LogicalAnd\AndAssignsToSeparateLinesRector
  * Rector\CodeQuality\Rector\LogicalAnd\LogicalToBooleanRector
+ * Rector\CodeQuality\Rector\New_\NewStaticToNewSelfRector
  * Rector\CodeQuality\Rector\NotEqual\CommonNotEqualRector
  * Rector\CodeQuality\Rector\Ternary\ArrayKeyExistsTernaryThenValueToCoalescingRector
  * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
@@ -208,4 +209,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 204 rules
+ ! [NOTE] Loaded 205 rules
