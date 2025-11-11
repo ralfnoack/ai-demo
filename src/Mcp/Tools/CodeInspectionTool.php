@@ -44,7 +44,7 @@ final readonly class CodeInspectionTool
      * @return array Optimierungs-Report
      */
     #[McpTool(name: 'rector_optimize')]
-    public function numberOfRectorOptimizedFiles(): int
+    public function rectorOptimize(): int
     {
         $output = [];
         $cmd = 'php vendor/bin/rector process --output-format json';

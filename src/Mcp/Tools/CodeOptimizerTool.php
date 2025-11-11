@@ -43,7 +43,7 @@ final readonly class CodeOptimizerTool
             $deadCodeLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::DEAD_CODE_LEVEL);
             $typeCoverageLevel = $this->readOrWriteRectorLevel(RectorLevelEnum::TYPE_COVERAGE_LEVEL);
 
-            $optimize = $codeInspectionTool->rectorOptimize();
+            $optimize = $codeInspectionTool->numberOfRectorOptimizedFiles();
             if (!$this->testRunSuccessful()) {
                 return false;
             }
