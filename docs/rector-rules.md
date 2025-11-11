@@ -48,6 +48,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\FuncCall\SingleInArrayToCompareRector
  * Rector\CodeQuality\Rector\FuncCall\SortNamedParamRector
  * Rector\CodeQuality\Rector\FuncCall\UnwrapSprintfOneArgumentRector
+ * Rector\CodeQuality\Rector\FunctionLike\SimplifyUselessVariableRector
  * Rector\CodeQuality\Rector\Identical\BooleanNotIdenticalToNotIdenticalRector
  * Rector\CodeQuality\Rector\Identical\FlipTypeControlToUseExclusiveTypeRector
  * Rector\CodeQuality\Rector\Identical\SimplifyArraySearchRector
@@ -83,8 +84,61 @@ Loaded Rector rules
  * Rector\CodingStyle\Rector\FuncCall\ConsistentImplodeRector
  * Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector
  * Rector\CodingStyle\Rector\FunctionLike\FunctionLikeToFirstClassCallableRector
+ * Rector\CodingStyle\Rector\Use_\SeparateMultiUseImportsRector
+ * Rector\DeadCode\Rector\Array_\RemoveDuplicatedArrayKeyRector
+ * Rector\DeadCode\Rector\Assign\RemoveDoubleAssignRector
+ * Rector\DeadCode\Rector\Assign\RemoveUnusedVariableAssignRector
+ * Rector\DeadCode\Rector\Block\ReplaceBlockToItsStmtsRector
+ * Rector\DeadCode\Rector\BooleanAnd\RemoveAndTrueRector
+ * Rector\DeadCode\Rector\Cast\RecastingRemovalRector
+ * Rector\DeadCode\Rector\ClassConst\RemoveUnusedPrivateClassConstantRector
+ * Rector\DeadCode\Rector\ClassLike\RemoveTypedPropertyNonMockDocblockRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveArgumentFromDefaultParentCallRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveEmptyClassMethodRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveNullTagValueNodeRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUnusedConstructorParamRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPrivateMethodParameterRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPrivateMethodRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPromotedPropertyRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUnusedPublicMethodParameterRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUselessAssignFromPropertyPromotionRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnExprInConstructRector
+ * Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector
+ * Rector\DeadCode\Rector\Closure\RemoveUnusedClosureVariableUseRector
+ * Rector\DeadCode\Rector\Concat\RemoveConcatAutocastRector
+ * Rector\DeadCode\Rector\ConstFetch\RemovePhpVersionIdCheckRector
+ * Rector\DeadCode\Rector\Expression\RemoveDeadStmtRector
+ * Rector\DeadCode\Rector\Expression\SimplifyMirrorAssignRector
+ * Rector\DeadCode\Rector\For_\RemoveDeadContinueRector
+ * Rector\DeadCode\Rector\For_\RemoveDeadIfForeachForRector
+ * Rector\DeadCode\Rector\For_\RemoveDeadLoopRector
  * Rector\DeadCode\Rector\Foreach_\RemoveUnusedForeachKeyRector
+ * Rector\DeadCode\Rector\FuncCall\RemoveFilterVarOnExactTypeRector
+ * Rector\DeadCode\Rector\FunctionLike\NarrowTooWideReturnTypeRector
+ * Rector\DeadCode\Rector\FunctionLike\RemoveDeadReturnRector
+ * Rector\DeadCode\Rector\If_\ReduceAlwaysFalseIfOrRector
+ * Rector\DeadCode\Rector\If_\RemoveAlwaysTrueIfConditionRector
+ * Rector\DeadCode\Rector\If_\RemoveDeadInstanceOfRector
+ * Rector\DeadCode\Rector\If_\RemoveTypedPropertyDeadInstanceOfRector
+ * Rector\DeadCode\Rector\If_\RemoveUnusedNonEmptyArrayBeforeForeachRector
+ * Rector\DeadCode\Rector\If_\SimplifyIfElseWithSameContentRector
+ * Rector\DeadCode\Rector\If_\UnwrapFutureCompatibleIfPhpVersionRector
+ * Rector\DeadCode\Rector\MethodCall\RemoveNullArgOnNullDefaultParamRector
+ * Rector\DeadCode\Rector\Node\RemoveNonExistingVarAnnotationRector
+ * Rector\DeadCode\Rector\Plus\RemoveDeadZeroAndOneOperationRector
+ * Rector\DeadCode\Rector\PropertyProperty\RemoveNullPropertyInitializationRector
+ * Rector\DeadCode\Rector\Property\RemoveUnusedPrivatePropertyRector
+ * Rector\DeadCode\Rector\Property\RemoveUselessReadOnlyTagRector
+ * Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector
+ * Rector\DeadCode\Rector\Return_\RemoveDeadConditionAboveReturnRector
  * Rector\DeadCode\Rector\StaticCall\RemoveParentCallWithoutParentRector
+ * Rector\DeadCode\Rector\Stmt\RemoveConditionExactReturnRector
+ * Rector\DeadCode\Rector\Stmt\RemoveUnreachableStatementRector
+ * Rector\DeadCode\Rector\Switch_\RemoveDuplicatedCaseInSwitchRector
+ * Rector\DeadCode\Rector\Ternary\TernaryToBooleanOrFalseToBooleanAndRector
+ * Rector\DeadCode\Rector\TryCatch\RemoveDeadCatchRector
+ * Rector\DeadCode\Rector\TryCatch\RemoveDeadTryCatchRector
  * Rector\Php52\Rector\Property\VarToPublicPropertyRector
  * Rector\Php52\Rector\Switch_\ContinueToBreakInSwitchRector
  * Rector\Php53\Rector\FuncCall\DirNameFileConstantToDirConstantRector
@@ -203,13 +257,24 @@ Loaded Rector rules
  * Rector\Renaming\Rector\FuncCall\RenameFunctionRector
  * Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector
  * Rector\Symfony\CodeQuality\Rector\ClassMethod\ResponseReturnTypeControllerActionRector
+ * Rector\Transform\Rector\FuncCall\FuncCallToConstFetchRector
  * Rector\Transform\Rector\StaticCall\StaticCallToFuncCallRector
  * Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddMethodCallBasedStrictParamTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddParamFromDimFetchKeyUseRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddParamStringTypeFromSprintfUseRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeBasedOnPHPUnitDataProviderRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeFromPropertyTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationBasedOnParentClassMethodRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeFromTryCatchTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector
  * Rector\TypeDeclaration\Rector\ClassMethod\BoolReturnTypeFromBooleanConstReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\BoolReturnTypeFromBooleanStrictReturnsRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\KnownMagicClassMethodTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\NumericReturnTypeFromStrictReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\NumericReturnTypeFromStrictScalarReturnsRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ParamTypeByMethodCallTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ParamTypeByParentCallTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnNeverTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnNullableTypeRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromMockObjectRector
@@ -217,19 +282,43 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnDirectArrayRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnNewRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictConstantReturnRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictFluentReturnRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictParamRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedCallRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedPropertyRector
  * Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromSymfonySerializerRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\ReturnUnionTypeRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\StrictArrayParamDimFetchRector
+ * Rector\TypeDeclaration\Rector\ClassMethod\StrictStringParamConcatRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictScalarReturnsRector
  * Rector\TypeDeclaration\Rector\ClassMethod\StringReturnTypeFromStrictStringReturnsRector
  * Rector\TypeDeclaration\Rector\Class_\AddTestsVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Class_\ChildDoctrineRepositoryClassTypeRector
+ * Rector\TypeDeclaration\Rector\Class_\MergeDateTimePropertyTypeDeclarationRector
+ * Rector\TypeDeclaration\Rector\Class_\ObjectTypedPropertyFromJMSSerializerAttributeTypeRector
+ * Rector\TypeDeclaration\Rector\Class_\PropertyTypeFromStrictSetterGetterRector
  * Rector\TypeDeclaration\Rector\Class_\ReturnTypeFromStrictTernaryRector
+ * Rector\TypeDeclaration\Rector\Class_\ScalarTypedPropertyFromJMSSerializerAttributeTypeRector
  * Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromCreateMockAssignRector
+ * Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromDocblockSetUpDefinedRector
+ * Rector\TypeDeclaration\Rector\Class_\TypedStaticPropertyInBehatContextRector
+ * Rector\TypeDeclaration\Rector\Closure\AddClosureNeverReturnTypeRector
  * Rector\TypeDeclaration\Rector\Closure\AddClosureVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeRector
  * Rector\TypeDeclaration\Rector\Empty_\EmptyOnNullableObjectToInstanceOfRector
+ * Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector
+ * Rector\TypeDeclaration\Rector\FuncCall\AddArrowFunctionParamArrayWhereDimFetchRector
+ * Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector
+ * Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayReduceRector
+ * Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector
  * Rector\TypeDeclaration\Rector\FunctionLike\AddParamTypeSplFixedArrayRector
+ * Rector\TypeDeclaration\Rector\FunctionLike\AddReturnTypeDeclarationFromYieldsRector
  * Rector\TypeDeclaration\Rector\Function_\AddFunctionVoidReturnTypeWhereNoReturnRector
+ * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromAssignsRector
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
+ * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictSetUpRector
 
 
- ! [NOTE] Loaded 228 rules
+ ! [NOTE] Loaded 317 rules
