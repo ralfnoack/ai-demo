@@ -83,6 +83,8 @@ Loaded Rector rules
  * Rector\CodingStyle\Rector\Assign\SplitDoubleAssignRector
  * Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector
  * Rector\CodingStyle\Rector\ClassConst\RemoveFinalFromConstRector
+ * Rector\CodingStyle\Rector\ClassConst\SplitGroupedClassConstantsRector
+ * Rector\CodingStyle\Rector\ClassMethod\BinaryOpStandaloneAssignsToDirectRector
  * Rector\CodingStyle\Rector\ClassMethod\FuncGetArgsToVariadicParamRector
  * Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsParentRector
  * Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector
@@ -98,7 +100,9 @@ Loaded Rector rules
  * Rector\CodingStyle\Rector\FuncCall\VersionCompareFuncCallToConstantRector
  * Rector\CodingStyle\Rector\FunctionLike\FunctionLikeToFirstClassCallableRector
  * Rector\CodingStyle\Rector\If_\NullableCompareToNullRector
+ * Rector\CodingStyle\Rector\Property\SplitGroupedPropertiesRector
  * Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector
+ * Rector\CodingStyle\Rector\Stmt\RemoveUselessAliasInUseStatementRector
  * Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector
  * Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector
  * Rector\CodingStyle\Rector\Ternary\TernaryConditionVariableAssignmentRector
@@ -337,6 +341,7 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromAssignsRector
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictSetUpRector
+ * Rector\Visibility\Rector\ClassMethod\ExplicitPublicClassMethodRector
 
 
- ! [NOTE] Loaded 335 rules
+ ! [NOTE] Loaded 340 rules

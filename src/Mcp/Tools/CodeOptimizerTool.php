@@ -86,7 +86,8 @@ final readonly class CodeOptimizerTool
         }
 
         $increment = min($maxIncr, $rectorLevelEnum->getMaxLevel() - $current);
-        echo 'Incrementing '.$rectorLevelEnum->getConstantName().sprintf(' = %d by %d%s', $current, $increment, PHP_EOL);
+        sprintf(' = %d by %d%s', $current, $increment, PHP_EOL);
+        $rectorLevelEnum->getConstantName();
         $this->incrementRectorLevel($rectorLevelEnum, $increment);
 
         return true;
