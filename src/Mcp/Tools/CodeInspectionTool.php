@@ -47,7 +47,7 @@ final readonly class CodeInspectionTool
     public function rectorOptimize(): int
     {
         $output = [];
-        $cmd = 'php vendor/bin/rector process --output-format jso″n';
+        $cmd = 'php vendor/bin/rector process --output-format json';
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
