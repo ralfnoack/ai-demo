@@ -30,6 +30,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\FuncCall\CallUserFuncWithArrowFunctionToInlineRector
  * Rector\CodeQuality\Rector\FuncCall\ChangeArrayPushToArrayAssignRector
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
+ * Rector\CodeQuality\Rector\FuncCall\InlineIsAInstanceOfRector
  * Rector\CodeQuality\Rector\FuncCall\IsAWithStringWithThirdArgumentRector
  * Rector\CodeQuality\Rector\FuncCall\RemoveSoleValueSprintfRector
  * Rector\CodeQuality\Rector\FuncCall\SetTypeToCastRector
@@ -217,4 +218,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 213 rules
+ ! [NOTE] Loaded 214 rules
