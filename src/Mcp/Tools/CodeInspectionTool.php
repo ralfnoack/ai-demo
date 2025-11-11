@@ -52,15 +52,10 @@ final readonly class CodeInspectionTool
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);
         echo " result: $returnVar\n";
-        echo ' output: '.implode("\n", $output)."\n";
-
         $json = implode("\n", $output);
-
         $decoded_json = json_decode($json, true) ?? ['error' => 'rector Optimierung fehlgeschlagen'];
-
+        echo " changed_files: ".$decoded_json['totals']['changed_files']."\n";
         return (int)$decoded_json['totals']['changed_files'];
-
-
     }
 
     #[McpTool(name: 'rector_listrules')]

@@ -44,7 +44,7 @@ final readonly class CodeOptimizerTool
                 $incremented = $this->incrementedOneRectorLevel($codeQualityLevel, $deadCodeLevel, $typeCoverageLevel);
                 continue;
             }
-            $this->rectorList();
+            $codeInspectionTool->rectorList();
             if (!$this->testRunSuccessful()) {
                 return false;
             }
