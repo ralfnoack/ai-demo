@@ -45,7 +45,7 @@ final readonly class CodeOptimizerTool
 
             $numberOfOptimizedFiles = $codeInspectionTool->numberOfRectorOptimizedFiles();
 
-            if (!$this->testRunSuccessful()) {
+            if ($numberOfOptimizedFiles === 0) {
                 return false;
             }
 
