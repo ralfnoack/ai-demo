@@ -141,10 +141,14 @@ final readonly class CodeInspectionTool
      * @return array Analyse-Report
      */
     #[McpTool(name: 'pest_test')]
-    public function pestTest(string $path): array
+    public function pestTest(string $path = '/tests'): array
     {
         $output = [];
-        $cmd = sprintf('php vendor/bin/pest', escapeshellarg($path));
+        $cmd = sprintf('php vendor/bin/pest --testdox-text %s --coverage-text %s -path-coverage %s',
+            escapeshellarg($this->pwd . '/docs/testdox.txt'),
+            escapeshellarg($this->pwd . '/docs/coverage.txt'),
+            escapeshellarg($this->pwd . $path)
+        );
 
         echo "$cmd\n";
         exec($cmd, $output, $returnVar);

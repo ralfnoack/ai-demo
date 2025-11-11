@@ -28,7 +28,7 @@ final class CodeOptimizerTool
         }
         $optimize = $codeInspectionTool->rectorList();
         $optimize = $codeInspectionTool->rectorOptimize($path);
-        if (!$this->testRunSuccessful($path)) {
+        if (!$this->testRunSuccessful()) {
             return false;
         }
         $commitChangesTool = new CommitChangesTool();
@@ -43,10 +43,10 @@ final class CodeOptimizerTool
         return true;
     }
 
-    private function testRunSuccessful(string $path): bool
+    private function testRunSuccessful(): bool
     {
         $codeInspectionTool = new CodeInspectionTool();
-        $pest = $codeInspectionTool->pestTest($path);
+        $pest = $codeInspectionTool->pestTest();
 
         return empty($pest['failures']);
     }
