@@ -57,6 +57,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\NotEqual\CommonNotEqualRector
  * Rector\CodeQuality\Rector\Ternary\ArrayKeyExistsTernaryThenValueToCoalescingRector
  * Rector\CodeQuality\Rector\Ternary\SimplifyTautologyTernaryRector
+ * Rector\CodeQuality\Rector\Ternary\SwitchNegatedTernaryRector
  * Rector\CodeQuality\Rector\Ternary\TernaryImplodeToImplodeRector
  * Rector\CodeQuality\Rector\Ternary\UnnecessaryTernaryExpressionRector
  * Rector\CodingStyle\Rector\FuncCall\ClosureFromCallableToFirstClassCallableRector
@@ -211,4 +212,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 207 rules
+ ! [NOTE] Loaded 208 rules
