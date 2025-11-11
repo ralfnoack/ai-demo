@@ -5,6 +5,7 @@ Loaded Rector rules
  * Rector\Arguments\Rector\ClassMethod\ArgumentAdderRector
  * Rector\Arguments\Rector\FuncCall\FunctionArgumentDefaultValueReplacerRector
  * Rector\CodeQuality\Rector\Assign\CombinedAssignRector
+ * Rector\CodeQuality\Rector\BooleanAnd\RemoveUselessIsObjectCheckRector
  * Rector\CodeQuality\Rector\BooleanAnd\RepeatedAndNotEqualToNotInArrayRector
  * Rector\CodeQuality\Rector\BooleanAnd\SimplifyEmptyArrayCheckRector
  * Rector\CodeQuality\Rector\BooleanNot\ReplaceConstantBooleanNotRector
@@ -228,4 +229,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 224 rules
+ ! [NOTE] Loaded 225 rules
