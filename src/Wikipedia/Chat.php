@@ -39,6 +39,7 @@ final readonly class Chat
         $messages = $this->loadMessages();
 
         $messages->add(Message::ofUser($message));
+
         $result = $this->agent->call($messages);
 
         \assert($result instanceof TextResult);

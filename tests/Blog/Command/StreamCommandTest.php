@@ -41,6 +41,7 @@ test('stream command outputs streamed content and success', function (): void {
 
     $input = new ArrayInput([]);
     $input->setInteractive(false);
+
     $io = new SymfonyStyle($input, $buffer = new BufferedOutput());
     $command = new StreamCommand($mockAgent);
     $command->__invoke($io);

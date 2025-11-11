@@ -33,6 +33,7 @@ final readonly class QueryCommand
         $io->title('Testing Chroma DB Connection');
 
         $io->comment('Connecting to Chroma DB ...');
+
         $collection = $this->chromaClient->getOrCreateCollection('symfony_blog');
         $io->table(['Key', 'Value'], [
             ['ChromaDB Version', $this->chromaClient->version()],

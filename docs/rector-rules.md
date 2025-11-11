@@ -83,14 +83,24 @@ Loaded Rector rules
  * Rector\CodingStyle\Rector\Assign\SplitDoubleAssignRector
  * Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector
  * Rector\CodingStyle\Rector\ClassConst\RemoveFinalFromConstRector
+ * Rector\CodingStyle\Rector\ClassMethod\FuncGetArgsToVariadicParamRector
+ * Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsParentRector
+ * Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector
  * Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector
+ * Rector\CodingStyle\Rector\Encapsed\WrapEncapsedVariableInCurlyBracesRector
+ * Rector\CodingStyle\Rector\FuncCall\CallUserFuncArrayToVariadicRector
+ * Rector\CodingStyle\Rector\FuncCall\CallUserFuncToMethodCallRector
  * Rector\CodingStyle\Rector\FuncCall\ClosureFromCallableToFirstClassCallableRector
  * Rector\CodingStyle\Rector\FuncCall\ConsistentImplodeRector
+ * Rector\CodingStyle\Rector\FuncCall\CountArrayToEmptyArrayComparisonRector
  * Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector
+ * Rector\CodingStyle\Rector\FuncCall\StrictArraySearchRector
+ * Rector\CodingStyle\Rector\FuncCall\VersionCompareFuncCallToConstantRector
  * Rector\CodingStyle\Rector\FunctionLike\FunctionLikeToFirstClassCallableRector
  * Rector\CodingStyle\Rector\If_\NullableCompareToNullRector
  * Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector
  * Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector
+ * Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector
  * Rector\CodingStyle\Rector\Ternary\TernaryConditionVariableAssignmentRector
  * Rector\CodingStyle\Rector\Use_\SeparateMultiUseImportsRector
  * Rector\DeadCode\Rector\Array_\RemoveDuplicatedArrayKeyRector
@@ -329,4 +339,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictSetUpRector
 
 
- ! [NOTE] Loaded 325 rules
+ ! [NOTE] Loaded 335 rules
