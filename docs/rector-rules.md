@@ -21,6 +21,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\Foreach_\ForeachToInArrayRector
  * Rector\CodeQuality\Rector\Foreach_\SimplifyForeachToCoalescingRector
  * Rector\CodeQuality\Rector\FuncCall\ArrayMergeOfNonArraysToSimpleArrayRector
+ * Rector\CodeQuality\Rector\FuncCall\ChangeArrayPushToArrayAssignRector
  * Rector\CodeQuality\Rector\FuncCall\CompactToVariablesRector
  * Rector\CodeQuality\Rector\FuncCall\IsAWithStringWithThirdArgumentRector
  * Rector\CodeQuality\Rector\FuncCall\RemoveSoleValueSprintfRector
@@ -199,4 +200,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 195 rules
+ ! [NOTE] Loaded 196 rules
