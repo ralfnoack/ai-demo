@@ -19,6 +19,7 @@ Loaded Rector rules
  * Rector\CodeQuality\Rector\ClassMethod\LocallyCalledStaticMethodToNonStaticRector
  * Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector
  * Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector
+ * Rector\CodeQuality\Rector\Class_\ConvertStaticToSelfRector
  * Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector
  * Rector\CodeQuality\Rector\Class_\ReturnIteratorInDataProviderRector
  * Rector\CodeQuality\Rector\Concat\JoinStringConcatRector
@@ -229,4 +230,4 @@ Loaded Rector rules
  * Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector
 
 
- ! [NOTE] Loaded 225 rules
+ ! [NOTE] Loaded 226 rules
